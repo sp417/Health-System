@@ -25,7 +25,7 @@ COPY nginx.conf /etc/nginx/conf.d
 COPY --from=builder /app/build /usr/share/nginx/html
 
 # Expose port 80
-EXPOSE 80
+EXPOSE 3000
 
 # Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
