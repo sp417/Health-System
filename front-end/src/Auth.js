@@ -8,7 +8,7 @@ export default function Auth({ onLogin }) {
 
   const handleAuth = async (e) => {
     e.preventDefault();
-    const endpoint = isLogin ? '/login' : '/signup';
+    const endpoint = isLogin ? 'http://13.204.65.29:3008/login' : 'http://13.204.65.29:3008/signup';
 
     const res = await fetch(endpoint, {
       method: 'POST',
