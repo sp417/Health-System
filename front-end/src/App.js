@@ -15,7 +15,7 @@ function App() {
   }, [page, isAuthenticated]);
 
   const fetchPatients = async () => {
-    const res = await fetch('http://13.204.65.29:3008/patients');
+    const res = await fetch('http://15.207.20.226:3008/patients');
     const data = await res.json();
     setPatients(data);
   };
@@ -52,7 +52,7 @@ function App() {
       prescription: ''
     };
 
-    await fetch('http://13.204.65.29:3008/patients', {
+    await fetch('http://15.207.20.226:3008/patients', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newPatient)
@@ -67,13 +67,13 @@ function App() {
   const deletePatient = async (idx) => {
     if (!window.confirm('Are you sure you want to delete this patient?')) return;
     const id = patients[idx]._id;
-    await fetch(`http://13.204.65.29:3008/patients/${id}`, { method: 'DELETE' });
+    await fetch(`http://15.207.20.226:3008/patients/${id}`, { method: 'DELETE' });
     fetchPatients();
   };
 
   const savePrescription = async () => {
     const text = document.getElementById('prescription-details').value;
-    await fetch(`http://13.204.65.29:3008/patients/${currentPatientId}`, {
+    await fetch(`http://15.207.20.226:3008/patients/${currentPatientId}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ prescription: text })
@@ -94,7 +94,7 @@ function App() {
   if (!isAuthenticated) {
   return <Auth onLogin={() => {
     setIsAuthenticated(true);
-    setTimeout(() => fetchPatients(), 100); // ensures dashboard gets data right after login
+    setTimeout(() => fetchPatients(), 100); 
   }} />;
   }
 
