@@ -6,7 +6,7 @@ A full-stack Health Monitoring System built using the MERN (MongoDB, Express.js,
 
 - 🔐 User authentication and authorization
 - 📈 Real-time health data monitoring
-- 📊 Dashboards for visualizing health trends
+- 📊 Dashboards for visualizing health trends.
 - 🧾 Patient and record management
 - 📡 RESTful API for health data submission and retrieval
 - 🌐 Responsive front-end with React.js
